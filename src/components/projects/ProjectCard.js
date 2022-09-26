@@ -119,7 +119,7 @@ const ProjectCard = ({ index, moveCardHandler, item }) => {
       <div
         style={{
           border:
-            description.toLowerCase().includes(searchText.toLowerCase()) &&
+            projectName.toLowerCase().includes(searchText.toLowerCase()) &&
             searchText !== ''
               ? '2px solid pink'
               : '0px',

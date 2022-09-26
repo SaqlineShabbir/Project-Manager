@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/images/logo.svg';
 import Team from '../components/teams/Team';
-import Error from '../components/ui/Error';
 import Navigation from '../components/ui/Navigation';
 import { useGetTeamsQuery } from '../features/teams/teamsApi';
 
@@ -31,9 +30,7 @@ const Teams = () => {
     content = <li className="m-2 text-center">Loading</li>;
   } else if (!isLoading && isError) {
     content = (
-      <li className="m-2 text-center">
-        <Error message={error?.data} />
-      </li>
+      <p className="m-2 text-center text-red-500 ">There was an error</p>
     );
   } else if (!isLoading && !isError && teams?.length === 0) {
     content = (
