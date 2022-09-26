@@ -46,7 +46,7 @@ export const projectsApi = apiSlice.injectEndpoints({
               'getProject',
               data.creator.email,
               (draft) => {
-                draft.push(data);
+                draft.unshift(data);
               }
             )
           );
