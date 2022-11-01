@@ -40,7 +40,7 @@ const Team = ({ team }) => {
     }
   };
   const handleSearch = debounceHandler(doSearch, 500);
-
+  console.log(participant);
   const handleSubmit = (e) => {
     if (e.key === 'Enter') {
       if (participant?.length > 0 && myEmail === to) {
@@ -52,6 +52,8 @@ const Team = ({ team }) => {
           id: id,
           data: { members: members + '-' + to },
         });
+        setTextBox(false);
+        alert('Member added');
       }
     }
   };
